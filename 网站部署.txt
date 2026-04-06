@@ -1,0 +1,71 @@
+🚀 部署步骤（3分钟搞定）
+第 1 步：创建 GitHub 仓库
+打开 github.com 登录
+点击右上角 + → New repository
+仓库名：serenity-wood，选择 Public
+点击 Create repository
+第 2 步：上传文件
+在新建的仓库页面：
+
+点击 uploading an existing file
+将 serenity-wood 文件夹内所有文件拖拽上传
+点击 Commit changes
+第 3 步：启用 Pages
+点击仓库顶部的 Settings
+左侧选择 Pages
+Source 选择 GitHub Actions
+系统会自动识别配置文件并开始部署
+第 4 步：访问网站
+等待 1-2 分钟
+访问地址：https://%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D.github.io/serenity-wood/
+
+
+可以！这个网站完全支持自定义上传商品图片和视频。让我给你说明一下：
+
+📸 图片和视频上传方式
+1. 商品图片
+当前占位符位置：
+
+shop.html - 产品列表页的产品卡片图片
+product.html - 产品详情页的主图和缩略图
+index.html - 首页精选产品图片
+替换方法：
+
+将你的图片文件放入 serenity-wood/images/ 文件夹
+在 HTML 中修改图片路径：
+html
+复制
+<!-- 例如替换产品主图 -->
+<img src="images/your-product-1.jpg" alt="沉香手串产品图">
+2. 视频素材
+支持添加视频的位置：
+
+产品详情页 - 产品展示视频
+Rituals 页面 - 冥想引导视频
+Stories 页面 - 品牌故事视频
+添加方式：
+
+html
+复制
+<!-- 本地视频 -->
+<video controls poster="images/video-cover.jpg">
+  <source src="videos/meditation-guide.mp4" type="video/mp4">
+</video>
+
+<!-- 或者嵌入 YouTube/Vimeo -->
+<iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+🎯 推荐的图片规格
+用途	尺寸	格式
+产品主图	800x800px	JPG/PNG
+产品缩略图	400x400px	JPG/PNG
+横幅大图	1920x600px	JPG/PNG
+视频封面	1920x1080px	JPG
+💡 建议
+由于这是静态网站，图片和视频需要：
+
+手动放入项目文件夹
+重新部署到 GitHub Pages
+如果图片很多，建议：
+
+使用 Cloudinary 或 阿里云 OSS 等图床托管图片
+在代码中引用外部图片链接，减少仓库体积
